@@ -4,21 +4,25 @@
     padding: 0;
 }
 :root {
-    --color-1: transparent;
+    --color-0: transparent;
+    --color-1: white;
     --color-2: #ccc;
     --color-2: midnightblue;
     --text-color: charcoal;
     --accent-color: coral;
 }
 html {
+    width: 100%;
     overflow-x: hidden;
-    overscroll-behavior: contain;
+    background-color: yellow;
 }
 body {
     padding: 0;
     margin: 0;
-    background-color: aqua;
+    width:100%;
+    background-color: red;
     overflow-x: hidden;
+
 }
 
 #container {
@@ -29,8 +33,9 @@ body {
         'menu menu menu menu  menu'
         'about about about about about'
         'footer footer footer footer footer';
-    background-color: transparent;
-    height:auto;
+    background-color: white;
+    overflow-x: hidden;
+    position: absolute;
 }
 
 #header {
@@ -42,22 +47,20 @@ body {
     grid-template-areas:
         'logo nav';
     width: 100%;
-    height: 0vh;
-    pointer-events: all;
+    height: 40vh;
     transition: 0.6s ease;
-    position:relative;
+    position:absolute;
     transform-style: preserve-3d;
-    z-index: 500;
-    background:transparent;
+    z-index: 99;
+    overflow:hidden;
 }
 
 #logo {
     grid-column: 0;
     grid-area: logo;
-    position: relative;
+    width:120px;
     height:10vh;
 }
-
     #logo img {
         pointer-events: all;
         width: 120px;
@@ -65,28 +68,28 @@ body {
         position: relative;
     }
 
+html {
+    font-size: 12pt;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+}
+
 nav {
-    pointer-events: all;
-    grid-area: nav;
-    height: 200px;
-    background-color: var(--color-1);
+    height: 80px;
+    background-color: var(--color-0);
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
-    position: relative;
-    transition: 0.75s ease-out;
-    width:100%;
-    z-index:1000;
+    align-items: center;
+    position:relative;
+    z-index:999;
 }
 
 .links-container {
-    height: 70%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     justify-content: flex-end;
-    transition: 0.25s ease-in;
+    align-items: center;
 }
 
 nav a {
@@ -96,11 +99,11 @@ nav a {
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
-    font-size:1.2em;
-    font-weight: 2;
+    position:relative;
 }
+
     nav a:hover {
-        background-color: var(--accent-color);
+        background-color: coral;
     }
 
 nav .home-link {
@@ -109,7 +112,6 @@ nav .home-link {
 
 nav svg {
     fill: var(--text-color);
-    
 }
 
 #sidebar-active {
@@ -119,7 +121,6 @@ nav svg {
 .open-sidebar-button, .close-sidebar-button {
     display: none;
 }
-
 #banner {
     background: url('banner.png') no-repeat center center fixed;
     background-size: cover;
@@ -130,8 +131,9 @@ nav svg {
     display: grid;
     justify-content: center;
     align-items: flex-start;
+    position:relative;
     margin-bottom: -10vh;
-    overflow: hidden;
+
 }
     #banner h1 {
         grid-area: h1;
@@ -158,7 +160,7 @@ nav svg {
     margin: 0;
     background-color: white;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 #menu p
 {
@@ -281,7 +283,6 @@ nav svg {
             transform:translateY(0px);
             transition-delay:0.5s;
         }
-
 #about {
     background-color: white;
     grid-area: about;
@@ -289,16 +290,14 @@ nav svg {
     text-align: center;
     font-size: 1.45em;
     color: midnightblue;
-    z-index: 200;
     display: flex;
     flex-direction: column;
-    align-content:space-around;
     overflow: hidden;
-    margin-left: auto;
-    margin-right:auto;
-    padding:0;
-    width:100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
+
 #about-p {
     display: flex;
     flex-direction: column;
@@ -306,6 +305,7 @@ nav svg {
     margin-left: auto;
     margin-right: auto;
 }
+
     #about-p p {
         margin-top: 2vh;
         margin-bottom: 2vh;
@@ -329,10 +329,10 @@ nav svg {
     background-color: coral;
     color: white;
     padding: 20px 0 30px 0;
-    overflow: hidden;
+    overflow-x: hidden;
     width:100%;
-}
 
+}
     #footer-icons {
         display: flex;
         flex-direction: row;
@@ -355,18 +355,42 @@ nav svg {
             margin-right: 20px;
             margin-bottom: 5px;
         }
-
-    #footer-contact div {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
-        width: 100%;
-        margin: 0;
-    }
+        #footer-contact{
+            display:flex;
+            width:100%;
+            flex-direction:row;
+            margin-left:auto;
+            margin-right:auto;
+        }
+         #footer-contact p
+         {
+             max-width:283px;
+             text-align:center;
+         }
+            #footer-contact #contact-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                width: 50%;
+            }
+            #footer-contact #contact-details p
+            {
+              text-align:left;
+               width:300px;
+            }
+            #footer-contact div {
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
 
         #footer-contact div p {
             padding: 0;
+            width:100%;
         }
 
         #footer-contact div i {
@@ -381,6 +405,7 @@ nav svg {
             line-height: 35px;
             margin-bottom: 5px;
             margin-right: 10px;
+
         }
 
         #footer-contact div a {
@@ -562,8 +587,6 @@ nav svg {
         background-color: white;
         grid-area: about;
         height: 80vh;
-        margin-left:auto;
-        margin-right:auto;
         text-align: center;
         font-size: 1.1em;
         color: midnightblue;
@@ -576,12 +599,46 @@ nav svg {
     .contact-box {
         grid-template-columns: 1fr;
     }
-
+    iframe
+    {
+        width:90vw;
+    }
     .left {
         height: 200px;
     }
-    #contact{
+
+    #contact {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height:150vh;
+        overflow-x: hidden;
+    }
+    #footer{
         flex-direction:column;
+    }
+    #footer-contact
+    {
+        flex-direction:column;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content:center;
+        align-content:center;
+        justify-items:center;
+        align-items:center;
+    }
+        #footer-contact p {
+            text-align: center;
+
+        }
+    #contact-details {
+        max-width: 300px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #footer-contact #contact-details p {
+        max-width: 200px;
     }
 }
 @media (max-width:550px) {
@@ -589,58 +646,66 @@ nav svg {
         width: 100vw;
         height: 100%;
         overflow-x: hidden;
+        transition: 0.75s ease-out;
     }
 
     body {
         width: 100vw;
         height: 100%;
+        width: 100%;
         overflow-x: hidden;
         background-color: transparent;
+        transition: 0.75s ease-out;
+    }
+    #contact
+    {
+        padding:0;
+        margin:0;
+        width:100vw;
+        overflow-x:hidden;
     }
     .slider h2{
         font-size:3.5em;
     }
-
     nav {
-        pointer-events: all;
-        height: 50vh;
-        width: 100vw;
-        align-content: flex-end;
+        height: 80px;
+        background-color: var(--color-1);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: transparent;
     }
-
     .links-container {
-        pointer-events: all;
         flex-direction: column;
         align-items: flex-start;
-        position: relative;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
         right: -100%;
-        z-index: 500;
+        z-index: 10;
         width: 300px;
-        background-color: var(--color-2);
+        background-color: var(--color-1);
         box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
         transition: 0.75s ease-out;
-        border-bottom-left-radius: 20px;
+        border-bottom-left-radius:20px;
     }
-
     nav a {
         box-sizing: border-box;
-        height: 100%;
+        height: auto;
         width: 100%;
         padding: 20px 30px;
         justify-content: flex-start;
-        transition: 0.75s ease-out;
     }
-
+        nav a:hover {
+            background-color: coral;
+        }
     .open-sidebar-button, .close-sidebar-button {
-        padding: 10px;
+        padding: 20px;
         display: block;
-        transition: 0.75s ease-out;
     }
 
     #sidebar-active:checked ~ .links-container {
         right: 0;
-        transition: 0.75s ease-out;
-        background-color: white;
     }
 
     #sidebar-active:checked ~ #overlay {
@@ -650,24 +715,49 @@ nav svg {
         top: 0;
         left: 0;
         z-index: 9;
+    }
+    #menu {
+        transition: 0.75s ease-out;
+    }
+    #about {
+        transition: 0.75s ease-out;
+        width:100vw;
+        height:70vh;
+    }
+    #about-p {
+        padding: 0;
         transition: 0.75s ease-out;
     }
     #about-p p {
-        margin-left: auto;
-        margin-right: auto;
+        display:block;
+        padding:0;
     }
-}
-@media (max-width:300px) 
-{
-    html
-    {
-        width:100vw;
-        height:100%;
-        overflow-x:hidden;
+    #footer{
+        height:45vh;
+        padding:0;
+        align-content:center;
+        justify-content:space-around;
     }
-    body {
+    #footer-contact {
         width: 100%;
-        height: 100vw;
-        overflow-x: hidden;
+        height: 25vh;
+        display: flex;
+
+        justify-content: space-evenly;
     }
-}
+    #contact-details {
+        margin-left: auto;
+        justify-content: space-between;
+    }
+        #contact-details div {
+            min-width: 490px;
+            width: 100%;
+        }
+    #footer-contact div i {
+
+        width: 35px;
+        padding:0;
+        margin-right:0;
+        font-size:12px;
+    }
+    }
