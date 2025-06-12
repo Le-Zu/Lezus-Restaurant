@@ -366,6 +366,7 @@ nav svg {
          {
              max-width:283px;
              text-align:center;
+             margin-right: 10vw;
          }
             #footer-contact #contact-details {
                 display: flex;
