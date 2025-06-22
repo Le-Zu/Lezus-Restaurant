@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lezu's Restaurant</title>
+    <link rel="icon" type="images/x-icon" href="images/favicon.png" alt="Lezu's Restaurant Favicon that looks like a chef hat'">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/6c49738a03.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+    <div class="container" id="order-container">
+            <div class="header">
+                <a class="logo" href="index.html" class=""><img src="images/favicon.png"></a><!--MY HOME BUTTON-->
+                <nav class ="nav">
+                    <input type="checkbox" id="sidebar-active">
+                    <label for="sidebar-active" class="open-sidebar-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
+                    </label>
+                    <label id="overlay" for="sidebar-active"></label>
+                    <div class="links-container">
+                        <label for="sidebar-active" class="close-sidebar-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
+                        </label>
+                        <a href="index.html#menu">Menu</a>
+                        <a href="index.html#about">About</a>
+                        <a href="contact.html">Contact</a>
+            <a href="#" class="shopping">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span></a>
+                    </div>
+                </nav>
+            </div>
+        <div class="cover">
+            <div class="cover-overlay"> 
+                <h2>Quick Bite</h2>
+                <span class="slogan">Where Taste Takes the Fast Lane</span>
+            </div>
+        </div>
+        <div class="order">
+            <header>
+                        <h1>Menu</h1>
+            <div>
+                <a href="#" class="shopping">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span></a>
+            </div>
+            </header>
+        <div class="list">
+        </div>
+<div class="cart">
+    <div class="closeShopping">X</div>
+    <h1>Checkout</h1>
+    <h3>Nothing in cart</h3>
+    <ul class="listCart">
+    </ul>
+    <div class="checkOut">
+        <div class="total">$0</div>
+        <div class="clear-cart-btn">Clear Cart</div> 
+        <div>Checkout</div>
+    </div>   
+</div>
+
+    </div>
+        <div class="footer">
+            <div id="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+            <div id="footer-contact">
+                <div id="contact-details">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p>
+                            695 Park Avenue,
+                            <br />
+                            New York, NY 10065
+                        </p>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+1.555.555.5555</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:support@company.com">support@company.com</a></p>
+                    </div>
+                </div>
+                    <p>
+                        Mon-Thurs, Sunday | 9AM-10P,
+                        Friday | 9AM - 12AM,
+                        Saturday | 9AM - 2AM
+                    </p>
+                </div>
+            <p id="copyright">Copyright © 2025 Lezu's Restaurant | Designed by LE-ZU</p>
+    </div>
+</div>
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+        let slider = document.querySelector('.slider');
+        next.addEventListener('click', function ()
+        {
+            let slides = document.querySelectorAll('.slides');
+            slider.appendChild(slides[0]);
+        })
+        prev.addEventListener('click', function () {
+            let slides = document.querySelectorAll('.slides');
+            slider.prepend(slides[slides.length -1]);
+        })
+        
+    </script>
+<script src="menu.js"></script> 
+</body>
+</html>
