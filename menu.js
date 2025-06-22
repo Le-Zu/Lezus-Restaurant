@@ -180,3 +180,4 @@ function clearCart() {
 
 // Event listener for the "Clear Cart" button
 clearCartButton.addEventListener('click', clearCart);
+
